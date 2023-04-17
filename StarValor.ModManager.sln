@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarValor.ModManager", "StarValor.ModManager\StarValor.ModManager.csproj", "{EBC21111-EFF9-4382-BF60-7292561075EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBC21111-EFF9-4382-BF60-7292561075EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC21111-EFF9-4382-BF60-7292561075EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC21111-EFF9-4382-BF60-7292561075EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC21111-EFF9-4382-BF60-7292561075EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AEE4DD4-73B5-465D-A32E-5A6559DB051C}
+	EndGlobalSection
+EndGlobal
