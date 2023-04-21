@@ -35,8 +35,8 @@
             this.tsIcon = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbLog = new System.Windows.Forms.TextBox();
-            this.tabSettings = new System.Windows.Forms.TabControl();
-            this.pageSettings = new System.Windows.Forms.TabPage();
+            this.tcMain = new System.Windows.Forms.TabControl();
+            this.tabSettings = new System.Windows.Forms.TabPage();
             this.cbHideMe = new System.Windows.Forms.CheckBox();
             this.lblRanBIE = new System.Windows.Forms.Label();
             this.picRanBIE = new System.Windows.Forms.PictureBox();
@@ -51,8 +51,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tblLayout.SuspendLayout();
             this.statusMain.SuspendLayout();
+            this.tcMain.SuspendLayout();
             this.tabSettings.SuspendLayout();
-            this.pageSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRanBIE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInstalledBIE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLocatedSV)).BeginInit();
@@ -73,9 +73,10 @@
             this.tblLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblLayout.Controls.Add(this.statusMain, 0, 2);
             this.tblLayout.Controls.Add(this.tbLog, 0, 1);
-            this.tblLayout.Controls.Add(this.tabSettings, 0, 0);
+            this.tblLayout.Controls.Add(this.tcMain, 0, 0);
             this.tblLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblLayout.Location = new System.Drawing.Point(0, 0);
+            this.tblLayout.Margin = new System.Windows.Forms.Padding(0);
             this.tblLayout.Name = "tblLayout";
             this.tblLayout.RowCount = 3;
             this.tblLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -119,7 +120,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.tsStatus.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(4, 26);
+            this.tsStatus.Size = new System.Drawing.Size(800, 26);
             this.tsStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbLog
@@ -136,38 +137,41 @@
             this.tbLog.TabIndex = 17;
             this.tbLog.TabStop = false;
             // 
+            // tcMain
+            // 
+            this.tcMain.Controls.Add(this.tabSettings);
+            this.tcMain.Controls.Add(this.tabPage1);
+            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcMain.Location = new System.Drawing.Point(0, 0);
+            this.tcMain.Margin = new System.Windows.Forms.Padding(0);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.Padding = new System.Drawing.Point(0, 0);
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(1184, 584);
+            this.tcMain.TabIndex = 4;
+            // 
             // tabSettings
             // 
-            this.tabSettings.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabSettings.Controls.Add(this.pageSettings);
-            this.tabSettings.Controls.Add(this.tabPage1);
-            this.tabSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabSettings.Location = new System.Drawing.Point(3, 3);
+            this.tabSettings.BackColor = System.Drawing.SystemColors.Control;
+            this.tabSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabSettings.Controls.Add(this.cbHideMe);
+            this.tabSettings.Controls.Add(this.lblRanBIE);
+            this.tabSettings.Controls.Add(this.picRanBIE);
+            this.tabSettings.Controls.Add(this.btnLaunchSV);
+            this.tabSettings.Controls.Add(this.lblLocatedBIE);
+            this.tabSettings.Controls.Add(this.lblLocateSV);
+            this.tabSettings.Controls.Add(this.btnInstallBIE);
+            this.tabSettings.Controls.Add(this.picInstalledBIE);
+            this.tabSettings.Controls.Add(this.picLocatedSV);
+            this.tabSettings.Controls.Add(this.btnLocateSV);
+            this.tabSettings.Controls.Add(this.editAppDir);
+            this.tabSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabSettings.Margin = new System.Windows.Forms.Padding(0);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.SelectedIndex = 0;
-            this.tabSettings.Size = new System.Drawing.Size(1178, 578);
-            this.tabSettings.TabIndex = 4;
-            // 
-            // pageSettings
-            // 
-            this.pageSettings.Controls.Add(this.cbHideMe);
-            this.pageSettings.Controls.Add(this.lblRanBIE);
-            this.pageSettings.Controls.Add(this.picRanBIE);
-            this.pageSettings.Controls.Add(this.btnLaunchSV);
-            this.pageSettings.Controls.Add(this.lblLocatedBIE);
-            this.pageSettings.Controls.Add(this.lblLocateSV);
-            this.pageSettings.Controls.Add(this.btnInstallBIE);
-            this.pageSettings.Controls.Add(this.picInstalledBIE);
-            this.pageSettings.Controls.Add(this.picLocatedSV);
-            this.pageSettings.Controls.Add(this.btnLocateSV);
-            this.pageSettings.Controls.Add(this.editAppDir);
-            this.pageSettings.Location = new System.Drawing.Point(4, 25);
-            this.pageSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pageSettings.Name = "pageSettings";
-            this.pageSettings.Padding = new System.Windows.Forms.Padding(4);
-            this.pageSettings.Size = new System.Drawing.Size(1170, 549);
-            this.pageSettings.TabIndex = 1;
-            this.pageSettings.Text = "Settings";
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(4);
+            this.tabSettings.Size = new System.Drawing.Size(1176, 558);
+            this.tabSettings.TabIndex = 1;
+            this.tabSettings.Text = "Settings";
             // 
             // cbHideMe
             // 
@@ -194,6 +198,7 @@
             // picRanBIE
             // 
             this.picRanBIE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRanBIE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picRanBIE.Location = new System.Drawing.Point(3, 66);
             this.picRanBIE.Name = "picRanBIE";
             this.picRanBIE.Size = new System.Drawing.Size(24, 24);
@@ -209,6 +214,7 @@
             this.btnLaunchSV.TabIndex = 10;
             this.btnLaunchSV.Text = "&Launch Star Valor";
             this.btnLaunchSV.UseVisualStyleBackColor = true;
+            this.btnLaunchSV.Click += new System.EventHandler(this.btnLaunchSV_Click);
             // 
             // lblLocatedBIE
             // 
@@ -236,10 +242,12 @@
             this.btnInstallBIE.TabIndex = 6;
             this.btnInstallBIE.Text = "&Download && Install BepInEx";
             this.btnInstallBIE.UseVisualStyleBackColor = true;
+            this.btnInstallBIE.Click += new System.EventHandler(this.btnBepInEx_Click);
             // 
             // picInstalledBIE
             // 
             this.picInstalledBIE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInstalledBIE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picInstalledBIE.Location = new System.Drawing.Point(3, 36);
             this.picInstalledBIE.Name = "picInstalledBIE";
             this.picInstalledBIE.Size = new System.Drawing.Size(24, 24);
@@ -250,6 +258,7 @@
             // picLocatedSV
             // 
             this.picLocatedSV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLocatedSV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picLocatedSV.Location = new System.Drawing.Point(3, 6);
             this.picLocatedSV.Name = "picLocatedSV";
             this.picLocatedSV.Size = new System.Drawing.Size(24, 24);
@@ -265,6 +274,7 @@
             this.btnLocateSV.TabIndex = 2;
             this.btnLocateSV.Text = "Locate Star Valor &EXE";
             this.btnLocateSV.UseVisualStyleBackColor = true;
+            this.btnLocateSV.Click += new System.EventHandler(this.btnBrowseAppDir_Click);
             // 
             // editAppDir
             // 
@@ -274,20 +284,21 @@
             this.editAppDir.Location = new System.Drawing.Point(467, 7);
             this.editAppDir.MinimumSize = new System.Drawing.Size(4, 24);
             this.editAppDir.Name = "editAppDir";
-            this.editAppDir.Size = new System.Drawing.Size(624, 20);
+            this.editAppDir.Size = new System.Drawing.Size(628, 24);
             this.editAppDir.TabIndex = 0;
             this.editAppDir.Visible = false;
             this.editAppDir.WordWrap = false;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1170, 549);
+            this.tabPage1.Size = new System.Drawing.Size(1176, 558);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -301,14 +312,16 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Star Valor Mod Manager";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tblLayout.ResumeLayout(false);
             this.tblLayout.PerformLayout();
             this.statusMain.ResumeLayout(false);
             this.statusMain.PerformLayout();
+            this.tcMain.ResumeLayout(false);
             this.tabSettings.ResumeLayout(false);
-            this.pageSettings.ResumeLayout(false);
-            this.pageSettings.PerformLayout();
+            this.tabSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRanBIE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInstalledBIE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLocatedSV)).EndInit();
@@ -323,8 +336,8 @@
         private System.Windows.Forms.ToolStripStatusLabel tsIcon;
         private System.Windows.Forms.ToolStripStatusLabel tsStatus;
         private System.Windows.Forms.TextBox tbLog;
-        private System.Windows.Forms.TabControl tabSettings;
-        private System.Windows.Forms.TabPage pageSettings;
+        private System.Windows.Forms.TabControl tcMain;
+        private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.CheckBox cbHideMe;
         private System.Windows.Forms.Label lblRanBIE;
         private System.Windows.Forms.PictureBox picRanBIE;

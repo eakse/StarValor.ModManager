@@ -1,9 +1,11 @@
 ﻿using StarValor.ModManager.Properties;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -45,10 +47,7 @@ namespace StarValor.ModManager
             InitializeComponent();
             if (File.Exists(logFile)) { File.Delete(logFile); }
             line = new string(bh, textWidth);
-            fntLocatedSV = lblLocateSV.Font;
-            fntInstalledBIE = lblLocatedBIE.Font;
-            fntRanBIE = lblRanBIE.Font;
-            LoadSettings();
+            //ApplyTheme();
         }
 
         public bool LocatedSV() => File.Exists(settings.SVexe);
@@ -111,8 +110,8 @@ namespace StarValor.ModManager
 
             btnInstallBIE.Enabled = settings.locatedSV;
             btnLaunchSV.Enabled = settings.locatedBIE;
-            this.Visible = true;
-
+            tbLog.SelectionStart = tbLog.TextLength;
+            tbLog.ScrollToCaret();
             if (settingsChanged) { SaveSettings(); logSettings(); }
         }
         private void CustomUpdate(object sender, EventArgs e)
@@ -252,6 +251,26 @@ namespace StarValor.ModManager
                 loggity(sw.ToString(), false);
             }
             logline();
+        }
+
+        public void UpdateColorControls(Control myControl)
+        {
+            myControl.BackColor = Color.DimGray;
+            myControl.ForeColor = Color.LightBlue;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorControls(subC);
+            }
+        }
+
+        private void ApplyTheme() 
+        {
+            foreach (Control c in this.Controls) UpdateColorControls(c);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoadSettings();
         }
     }
 }
